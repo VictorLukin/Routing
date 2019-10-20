@@ -7,5 +7,7 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'Routing';
-  defaultId = 'no ID';
+  defaultId = 'default ID';
+  defaultFirstQuery = 'first query default text';
+  defaultSecondQuery = 'second query default text';
 }
