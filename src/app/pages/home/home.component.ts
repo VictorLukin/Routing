@@ -9,7 +9,8 @@ import {Router} from '@angular/router';
 export class HomeComponent {
 
   id: string;
-  query: string;
+  firstQuery: string;
+  secondQuery: string;
 
   constructor(private router: Router) {
   }
@@ -19,7 +20,7 @@ export class HomeComponent {
   }
 
   onClickGoQuery() {
-    this.router.navigate(['query', this.query]);
+    this.router.navigate(['query'], {queryParams: {firstQuery: this.firstQuery, secondQuery: this.secondQuery}});
   }
 
 }

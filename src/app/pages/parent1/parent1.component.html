@@ -1,8 +1,14 @@
 <h2>Parent 1 page</h2>
 <hr>
-<a class="menu-item" routerLinkActive="active-menu-item" [routerLink]="child1">Child 1</a>
-<a class="menu-item" routerLinkActive="active-menu-item" [routerLink]="child2">Child 1</a>
-<a class="menu-item" routerLinkActive="active-menu-item" [routerLink]="child3">Child 1</a>
+<a
+  class="menu-item" routerLinkActive="active-menu-item" [routerLink]="['child1']"
+  [routerLinkActiveOptions]="{exact: true}">Child 1</a>
+<a
+  class="menu-item" routerLinkActive="active-menu-item" [routerLink]="['child2']"
+  [routerLinkActiveOptions]="{exact: true}">Child 2</a>
+<a
+  class="menu-item" routerLinkActive="active-menu-item" [routerLink]="['child3']"
+  [routerLinkActiveOptions]="{exact: true}">Child 3</a>
 <hr>
 <router-outlet></router-outlet>
 <hr>

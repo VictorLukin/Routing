@@ -12,7 +12,7 @@ export class ButtonToParentComponent {
   }
 
   onClick(): void {
-    this.router.navigate(['../']);
+    this.router.navigate(['/parent1']);
   }
 
 }

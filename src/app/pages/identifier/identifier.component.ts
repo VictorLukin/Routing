@@ -1,5 +1,6 @@
 import {Component, OnDestroy} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-identifier',
@@ -9,13 +10,14 @@ import {ActivatedRoute, Params} from '@angular/router';
 export class IdentifierComponent implements OnDestroy {
 
   private id: string;
+  private paramsSubscription: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.params.subscribe((params: Params) => { this.id = params.id; } );
+    this.paramsSubscription = this.activatedRoute.params.subscribe((params: Params) => { this.id = params.id; } );
   }
 
-  ngOnDestroy() {
-    this.activatedRoute.params.
+  ngOnDestroy(): void {
+    this.paramsSubscription.unsubscribe();
   }
 
 }

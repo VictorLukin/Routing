@@ -1,11 +1,15 @@
 <h1>App home page</h1>
 <hr>
-<a class="menu-item" routerLinkActive="active-menu-item" [routerLink]="['']" [routerLinkActiveOptions]="exact: true"></a>
+<a class="menu-item" routerLinkActive="active-menu-item" [routerLink]="['']" [routerLinkActiveOptions]="{exact: true}">Home</a>
 <a class="menu-item" routerLinkActive="active-menu-item" [routerLink]="['parent1']">Parent 1</a>
 <a class="menu-item" routerLinkActive="active-menu-item" [routerLink]="['parent2']">Parent 2</a>
 <a class="menu-item" routerLinkActive="active-menu-item" [routerLink]="['parent3']">Parent 3</a>
-<a class="menu-item" routerLinkActive="active-menu-item" [routerLink]="['identifier']">Identifier</a>
-<a class="menu-item" routerLinkActive="active-menu-item" [routerLink]="['query']">Query</a>
+<a class="menu-item" routerLinkActive="active-menu-item" [routerLink]="['identifier', defaultId]">Identifier</a>
+<a
+  class="menu-item"
+  routerLinkActive="active-menu-item"
+  [routerLink]="['query']"
+  [queryParams]="{'firstQuery': 'AAA', 'secondQuery': 'BBB'}">Query</a>
 <hr>
 <router-outlet></router-outlet>
 <hr>

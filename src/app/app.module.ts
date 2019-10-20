@@ -11,10 +11,11 @@ import {Child2Component} from './pages/parent1/child2/child2.component';
 import {Child3Component} from './pages/parent1/child3/child3.component';
 import {IdentifierComponent} from './pages/identifier/identifier.component';
 import {QueryComponent} from './pages/query/query.component';
-import {MainRouterModule} from './router/main-router.module';
-import { ButtonToParentComponent } from './components/button-to-parent/button-to-parent.component';
-import { HomeComponent } from './pages/home/home.component';
+import {routes} from './routes/main-routes';
+import {ButtonToParentComponent} from './components/button-to-parent/button-to-parent.component';
+import {HomeComponent} from './pages/home/home.component';
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,8 @@ import {FormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    MainRouterModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
